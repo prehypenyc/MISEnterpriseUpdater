@@ -94,14 +94,18 @@ class EnterpriseUpdater : NSObject {
     }
     
     private class func currentVersion() -> String? {
-        if let currentVersion = NSBundle.mainBundle().objectForInfoDictionaryKey(String(kCFBundleVersionKey)) as? String {
-            if !currentVersion.isEmpty {
-                return currentVersion;
-            }
-            
-            if let currentVersion = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as? String {
-                return currentVersion;
-            }
+//        if let currentVersion = NSBundle.mainBundle().objectForInfoDictionaryKey(String(kCFBundleVersionKey)) as? String {
+//            if !currentVersion.isEmpty {
+//                return currentVersion;
+//            }
+//            
+//            if let currentVersion = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as? String {
+//                return currentVersion;
+//            }
+//        }
+        
+        if let currentVersion = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as? String {
+            return currentVersion;
         }
         
         return nil;

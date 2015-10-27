@@ -94,11 +94,12 @@ static NSString * const PKTEnterpriseUpdaterErrorInvalidPlistDescription = @"Inv
 
 + (NSString *)currentVersion
 {
-    NSString *currentVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
-    if (currentVersion.length == 0) {
-        currentVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
-    }
-    return currentVersion;
+    return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+//    NSString *currentVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
+//    if (currentVersion.length == 0) {
+//        currentVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+//    }
+//    return currentVersion;
 }
 
 @end
